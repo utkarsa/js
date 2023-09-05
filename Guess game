@@ -1,0 +1,28 @@
+let num = Math.floor(Math.random() * 100) + 1;
+let chances = 0;
+let guess;
+
+console.log("Welcome to the game! Enter a number between 1 and 100");
+
+do {
+    guess = prompt("Enter your guess:");
+    guess = parseInt(guess);
+
+    if (isNaN(guess) || guess < 1 || guess > 100) {
+        console.log("Please enter a valid number between 1 and 100.");
+        continue;
+    }
+
+    chances++;
+
+    if (guess > num) {
+        console.log("Too big! Try again.");
+    } else if (guess < num) {
+        console.log("Too small! Try again.");
+    }
+
+} while (guess !== num);
+
+let score = 100 - chances;
+console.log("Congratulations! You guessed the right number:", num);
+console.log("Your score is:", score);
