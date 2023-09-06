@@ -1,0 +1,17 @@
+
+let RunAgain = true ;
+while (Run)
+{
+let age = prompt("What is your age?");
+age = Number.parseInt(age);
+
+if (age >= 18)
+ {
+    console.log("You can drive");
+}
+ else
+{
+    console.log("You can't drive");
+}
+RunAgain = confirm("Do you want to play again")
+}
