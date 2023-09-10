@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Created Elements</title>
+</head>
+<body>
+    <script>
+        // Your JavaScript code here
+        const parentElement = document.createElement("div");
+        const child1 = document.createElement("div");
+        const child2 = document.createElement("div");
+        const child3 = document.createElement("div");
+
+        child1.textContent = "Child 1";
+        child2.textContent = "Child 2";
+        child3.textContent = "Child 3";
+
+        parentElement.appendChild(child1);
+        parentElement.appendChild(child2);
+        parentElement.appendChild(child3);
+
+        child1.style.color = "green";
+        child3.style.color = "green";
+
+        document.body.appendChild(parentElement);
+    </script>
+</body>
+</html>
