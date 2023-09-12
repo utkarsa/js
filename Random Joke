@@ -1,0 +1,26 @@
+// Function to fetch and display a random joke
+async function fetchRandomJoke() {
+    try {
+        // Make an HTTP request to fetch the joke
+        const response = await fetch('https://v2.jokeapi.dev/joke/Any?type=single');
+        const data = await response.json();
+
+        // Check for errors in the response
+        if (data.error) {
+             console.error(data.error);
+        }
+
+        // Display the joke on the webpage
+        const jokeElement = document.getElementById('joke');
+        jokeElement.textContent = data.joke;
+    } catch (error) {
+        // Handle and log errors
+        console.error(error);
+    }
+}
+
+// Add a click event listener to the button
+document.getElementById('getJoke').addEventListener('click', fetchRandomJoke);
+
+// Fetch and display a random joke when the page loads
+fetchRandomJoke();
